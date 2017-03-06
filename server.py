@@ -1,8 +1,8 @@
 from flask import Flask
-import mongo_liason
+import mongo_liaison
 
 app = Flask(__name__)
-liason = mongo_liason
+liaison = mongo_liaison
 
 
 @app.route("/")
@@ -12,7 +12,7 @@ def hello():
 
 @app.route("/api/v1/<food_id>")
 def get_food_by_id(food_id):
-    document = liason.get_document_by_id(food_id)
+    document = liaison.get_document_by_id(food_id)
     return document
 
 # what is this doing ?
