@@ -1,3 +1,5 @@
+from bson import json_util
+from bson.json_util import dumps
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
@@ -13,4 +15,14 @@ def get_document_by_id(post_id):
     if document is None:
         return 'No object found'
     else:
-        return document['description']
+        return dumps(document)
+
+
+def get_food_ids():
+
+    food_ids = []
+
+    for doc in collection.find({}):
+        food_ids.append(doc['_id'])
+
+    return dumps(food_ids)

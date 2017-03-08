@@ -11,3 +11,5 @@ python hello.py
 #Lessons learned : 
 - `pip freeze > requirements.txt` :: places all dependencies inside txt file which can be read later
  - `pip install -r requirements.txt` 
+- dumps (converts binary object to JSON)
+- flask responses
