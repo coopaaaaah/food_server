@@ -7,8 +7,8 @@ liaison = mongo_liaison
 
 
 @app.route("/")
-def hello():
-    return "You can view food at our /api/v1/<food_id> endpoint! Give it a try with 01001."
+def root():
+    return "You can view food at our /api/v1/food/<food_id> endpoint! Give it a try with 01001."
 
 
 @app.route("/api/v1/food/<food_id>")
