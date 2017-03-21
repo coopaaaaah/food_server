@@ -5,6 +5,7 @@ bonjour-py==0.3
 certifi==2017.1.23
 click==6.7
 Flask==0.12
+Flask-Cors==3.0.2
 itsdangerous==0.24
 Jinja2==2.9.5
 macholib==1.5.1

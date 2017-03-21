@@ -1,8 +1,10 @@
 import flask
 from flask import Flask
+from flask_cors import CORS
 import mongo_liaison
 
 app = Flask(__name__)
+CORS(app)
 liaison = mongo_liaison
 
 

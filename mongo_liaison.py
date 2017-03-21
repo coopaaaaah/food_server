@@ -1,4 +1,3 @@
-from bson import json_util
 from bson.json_util import dumps
 from pymongo import MongoClient
 
