@@ -13,14 +13,19 @@ def root():
     return "You can view food at our /api/v1/food/<food_id> endpoint! Give it a try with 01001."
 
 
-@app.route("/api/v1/food/<food_id>")
+@app.route("/api/v1/foods/<food_id>")
 def get_food_by_id(food_id):
     return flask.Response(response=liaison.get_document_by_id(food_id), status=200, mimetype='application/json')
 
 
-@app.route("/api/v1/food")
+@app.route("/api/v1/foods/findByDescription/<food_description>")
+def get_food_by_description(food_description):
+    return flask.Response(response=liaison.get_food_by_description(food_description), status=200, mimetype='application/json')
+
+
+@app.route("/api/v1/foods")
 def get_food():
-    return flask.Response(response=liaison.get_food_ids(), status=200, mimetype='application/json')
+    return flask.Response(response=liaison.get_all_food(), status=200, mimetype='application/json')
 
 
 # what is this doing ?

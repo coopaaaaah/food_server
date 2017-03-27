@@ -15,12 +15,15 @@ def get_document_by_id(post_id):
         return dumps(document, sort_keys = True, indent = 4, separators = (',', ': '))
 
 
-def get_food_ids():
+def get_food_by_description(description):
+    document = collection.find({"description" : {"$regex": description}})
 
-    food_ids = []
+    if document is None:
+        return 'No food found'
+    else:
+        return dumps(document, sort_keys = True, indent = 4, separators = (',', ': '))
 
-    for doc in collection.find({}):
-        food_ids.append(doc['_id'])
 
-    return dumps(food_ids, sort_keys = True, indent = 4, separators = (',', ': '))
+def get_all_food():
+    return dumps(collection.find({}).limit(50), sort_keys = True, indent = 4, separators = (',', ': '))
 
