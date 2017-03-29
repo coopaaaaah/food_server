@@ -25,5 +25,5 @@ def get_food_by_description(description):
 
 
 def get_all_food():
-    return dumps(collection.find({}).limit(50), sort_keys = True, indent = 4, separators = (',', ': '))
+    return dumps(collection.find({}), sort_keys = True, indent = 4, separators = (',', ': '))
 
